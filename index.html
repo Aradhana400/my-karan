@@ -318,4 +318,301 @@
         <div class="h-2 bg-gradient-to-r from-amber-400 to-yellow-500"></div>
         <div class="p-5 flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div class="flex items-center gap-3.5">
-            <div class="w-12 h-
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center shrink-0">
+              <i data-lucide="hand-coins" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="font-bold text-slate-900 text-lg">Loans Section</h3>
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
+                  Placeholder / Coming Soon
+                </span>
+              </div>
+              <p class="text-sm text-slate-500 mt-1">
+                Personal, Business &amp; Home Loan details will be updated here soon.
+              </p>
+            </div>
+          </div>
+          <button
+            type="button"
+            data-service="Loans Inquiry"
+            data-price="Coming Soon"
+            class="select-service-btn shrink-0 py-2.5 px-5 rounded-xl bg-amber-100 hover:bg-amber-500 text-amber-800 hover:text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2"
+          >
+            <span>Enquire</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Same-Page Quick Application / Request Form -->
+    <section id="request-section" class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
+      <div class="max-w-2xl mx-auto">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+            <i data-lucide="clipboard-list" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-slate-900">Quick Service Request</h2>
+            <p class="text-xs sm:text-sm text-slate-500">Fill in your details on this page to book any service</p>
+          </div>
+        </div>
+
+        <form id="service-form" action="https://formspree.io/f/xwlowjlr" method="POST" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <input type="hidden" id="selected-price-input" name="price" value="₹150" />
+          <div class="sm:col-span-2">
+            <label for="selected-service" class="block text-sm font-semibold text-slate-700 mb-1.5">Selected Service</label>
+            <div class="flex items-center gap-3">
+              <select
+                id="selected-service"
+                name="service"
+                class="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="Aadhaar Update" data-price="₹150">Aadhaar Update — ₹150</option>
+                <option value="PAN Card Apply" data-price="₹200">PAN Card Apply — ₹200</option>
+                <option value="Voter Card Apply" data-price="₹150">Voter Card Apply — ₹150</option>
+                <option value="ITR Filing" data-price="₹400">ITR Filing — ₹400</option>
+                <option value="Bank Account Opening" data-price="Free">Bank Account Opening — Free</option>
+                <option value="Demat Account Opening" data-price="Free">Demat Account Opening — Free</option>
+                <option value="Credit Card Apply" data-price="As per Bank">Credit Card Apply</option>
+                <option value="Loans Inquiry" data-price="Coming Soon">Loans Inquiry</option>
+              </select>
+              <span id="form-price-badge" class="shrink-0 px-3.5 py-2.5 rounded-xl bg-blue-50 text-blue-700 font-bold text-sm border border-blue-200">
+                ₹150
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <label for="customer-name" class="block text-sm font-semibold text-slate-700 mb-1.5">Your Name</label>
+            <input
+              id="customer-name"
+              name="name"
+              type="text"
+              required
+              placeholder="Enter full name"
+              class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+          div>
+            <label for="customer-phone" class="block text-sm font-semibold text-slate-700 mb-1.5">Mobile Number</label>
+            <input
+              id="customer-phone"
+              name="phone"
+              type="tel"
+              required
+              placeholder="10-digit mobile number"
+              class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div class="sm:col-span-2 pt-1">
+            <button
+              id="submit-btn"
+              type="submit"
+              class="w-full py-3 px-6 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600 hover:opacity-95 text-white font-bold text-sm shadow-md transition-opacity flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60"
+            >
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span id="submit-btn-text">Submit Service Request</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- In-page Confirmation Banner -->
+        <div id="form-confirmation" class="hidden mt-4 p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-sm flex items-start gap-3">
+          <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5"></i>
+          <div>
+            <p class="font-bold">Request Sent!</p>
+            <p id="confirmation-text" class="text-emerald-700 mt-0.5"></p>
+          </div>
+        </div>
+
+        <!-- In-page Error Banner -->
+        <div id="form-error" class="hidden mt-4 p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-sm flex items-start gap-3">
+          <i data-lucide="alert-circle" class="w-5 h-5 text-rose-600 shrink-0 mt-0.5"></i>
+          <div>
+            <p class="font-bold">Could Not Send Request</p>
+            <p id="error-text" class="text-rose-700 mt-0.5"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer with Royservices7@gmail.com in the Bottom Corner -->
+  <footer class="w-full bg-slate-900 text-slate-300 mt-auto">
+    <div class="max-w-6xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+      <p class="text-slate-400 text-center sm:text-left">
+        &copy; 2026 <span class="font-semibold text-white">Roy Services</span>. All services on one page.
+      </p>
+
+      <!-- Bottom-Right Corner Email -->
+      <div class="flex items-center gap-2 self-end sm:self-auto bg-slate-800/90 border border-slate-700 px-3.5 py-2 rounded-xl">
+        <i data-lucide="mail" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+        <a
+          href="mailto:Royservices7@gmail.com"
+          class="font-semibold text-white hover:text-emerald-300 transition-colors"
+        >
+          Royservices7@gmail.com
+          </a>
+        <button
+          type="button"
+          id="copy-email-btn"
+          title="Copy email address"
+          class="ml-1 px-2 py-0.5 rounded-md bg-slate-700 hover:bg-slate-600 text-xs text-slate-200 transition-colors cursor-pointer"
+        >
+          Copy
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-20 right-4 z-50 hidden bg-slate-900 text-white text-xs sm:text-sm font-medium px-4 py-2.5 rounded-xl shadow-lg border border-slate-700">
+    Copied to clipboard!
+  </div>
+
+  <script>
+    if (window.lucide) { lucide.createIcons(); }
+
+    const categoryButtons = document.querySelectorAll('#category-menu .menu-pill');
+    const serviceCards = document.querySelectorAll('#services-grid article');
+    const selectButtons = document.querySelectorAll('.select-service-btn');
+    const serviceSelect = document.getElementById('selected-service');
+    const priceBadge = document.getElementById('form-price-badge');
+    const priceInput = document.getElementById('selected-price-input');
+    const serviceForm = document.getElementById('service-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitBtnText = document.getElementById('submit-btn-text');
+    const formConfirmation = document.getElementById('form-confirmation');
+    const confirmationText = document.getElementById('confirmation-text');
+    const formError = document.getElementById('form-error');
+    const errorText = document.getElementById('error-text');
+    const copyEmailBtn = document.getElementById('copy-email-btn');
+    const toast = document.getElementById('toast');
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 2200);
+    }
+    // Colorful Menu Filter Logic
+    categoryButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+
+        categoryButtons.forEach((b) => {
+          b.classList.remove('active');
+          b.classList.add('opacity-85');
+        });
+        btn.classList.add('active');
+        btn.classList.remove('opacity-85');
+
+        serviceCards.forEach((card) => {
+          const cat = card.getAttribute('data-category');
+          if (filter === 'all' || cat === filter) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Sync Dropdown Price Badge
+    function updatePriceBadge() {
+      const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+      const price = selectedOption.getAttribute('data-price') || 'Contact';
+      priceBadge.textContent = price;
+      priceInput.value = price;
+    }
+
+    serviceSelect.addEventListener('change', updatePriceBadge);
+    // Click Service Card -> Pre-select & Scroll to Form on Same Page
+    selectButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const serviceName = btn.getAttribute('data-service');
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].value === serviceName) {
+            serviceSelect.selectedIndex = i;
+            break;
+          }
+        }
+        updatePriceBadge();
+        document.getElementById('request-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        document.getElementById('customer-name').focus();
+      });
+    });
+
+    // Form Submission via Formspree
+    serviceForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formConfirmation.classList.add('hidden');
+      formError.classList.add('hidden');
+
+      const name = document.getElementById('customer-name').value.trim();
+      const phone = document.getElementById('customer-phone').value.trim();
+      const service = serviceSelect.value;
+      const price = priceBadge.textContent;
+
+      submitBtn.disabled = true;
+      submitBtnText.textContent = 'Sending...';
+
+      try {
+        const res = await fetch(serviceForm.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(serviceForm)
+        });
+        if (res.ok) {
+          confirmationText.textContent =
+            Thank you, ${name}! Your request for "${service}" (${price}) with mobile ${phone} has been sent to Roy Services.;
+          formConfirmation.classList.remove('hidden');
+          serviceForm.reset();
+          updatePriceBadge();
+        } else {
+          throw new Error('Server responded with ' + res.status);
+        }
+        } catch (err) {
+        errorText.textContent =
+          'Please check your internet connection and try again, or email us directly at Royservices7@gmail.com.';
+        formError.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtnText.textContent = 'Submit Service Request';
+      }
+    });
+
+    // Copy Email Button with execCommand Fallback
+    copyEmailBtn.addEventListener('click', () => {
+      const email = 'Royservices7@gmail.com';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(() => {
+          showToast('Email copied: ' + email);
+        }).catch(() => fallbackCopy(email));
+      } else {
+        fallbackCopy(email);
+      }
+    });
+
+    function fallbackCopy(text) {
+      const temp = document.createElement('textarea');
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      try {
+        document.execCommand('copy');
+        showToast('Email copied: ' + text);
+      } catch (err) {
+        showToast('Email: ' + text);
+      }
+      document.body.removeChild(temp);
+    }
+  </script>
+</body>
+</html>
