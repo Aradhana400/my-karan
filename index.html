@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -121,7 +120,16 @@
               ₹150
             </span>
           </div>
-        `<a href="#quick-service" data-service="Aadhaar Update" data-price="150" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-orange-50 hover:bg-orange-500 text-orange-700 hover:text-white font-semibold"> Select   
+          <button
+            type="button"
+            data-service="Aadhaar Update"
+            data-price="₹150"
+            class="select-service-btn w-full py-2.5 px-4 rounded-xl bg-orange-50 hover:bg-orange-500 text-orange-700 hover:text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2"
+          >
+            <span>Select Service</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
+        </div>
       </article>
 
       <!-- 2. PAN Card Apply -->
@@ -142,7 +150,15 @@
               ₹200
             </span>
           </div>
-          <a href="#quick-service" data-service="PAN Card Apply" data-price="200" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-500 text-blue-700 hover:text-white font-semibold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0 4 4 0 014-4h2a4 4 0 014 40h-2m-4-7h3m3 4H9m0 0m-9 3h6M5 11h2v2H5v-2z"></path></svg> Select Service</a>।
+          <button
+            type="button"
+            data-service="PAN Card Apply"
+            data-price="₹200"
+            class="select-service-btn w-full py-2.5 px-4 rounded-xl bg-blue-50 hover:bg-blue-600 text-blue-700 hover:text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2"
+          >
+            <span>Select Service</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
         </div>
       </article>
 
@@ -164,7 +180,15 @@
               ₹150
             </span>
           </div>
-        <a href="#quick-service" data-service="Voter Card Apply" data-price="150" class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl bg-purple-50 hover:bg-purple-500 text-purple-700 hover:text-white  002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4-7h3m3 4H9m6 3m-9 3h6"></path></svg> Select Service</a>
+          <button
+            type="button"
+            data-service="Voter Card Apply"
+            data-price="₹150"
+            class="select-service-btn w-full py-2.5 px-4 rounded-xl bg-rose-50 hover:bg-rose-500 text-rose-700 hover:text-white font-semibold text-sm transition-colors flex items-center justify-center gap-2"
+          >
+            <span>Select Service</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </button>
         </div>
       </article>
 
@@ -323,7 +347,7 @@
     </section>
 
     <!-- Same-Page Quick Application / Request Form -->
-    <section id="quick-service" class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
+    <section id="request-section" class="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8">
       <div class="max-w-2xl mx-auto">
         <div class="flex items-center gap-3 mb-5">
           <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
